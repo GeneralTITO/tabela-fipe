@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const DivStyled = styled.div`
-  height: 100%;
   width: 100%;
 `;
 export const DivSelectStyled = styled.div`
