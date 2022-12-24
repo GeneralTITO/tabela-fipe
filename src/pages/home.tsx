@@ -8,12 +8,10 @@ import { Datum, iInfo, iModels } from "./types";
 export const Home = () => {
   const [type, setType] = useState("1");
   const [response, setResponse] = useState([] as Datum[]);
-  const [loading, setLoading] = useState(true);
   const token = "2184|hETyPL1d8ftUchHPVOkccTeodqquBjQg";
   const [brand, setBrand] = useState("");
   const [modelBrand, setModelBrand] = useState([] as iModels[]);
   const [code, setCode] = useState("");
-  const [loadingBrand, setLoadingBrand] = useState(false);
   const [info, setInfo] = useState({} as iInfo);
 
   useEffect(() => {
@@ -35,7 +33,6 @@ export const Home = () => {
         try {
           Api.defaults.headers.authorization = `Bearer ${token}`;
           const mensage = await Api.get(`models/${brand}`);
-          console.log(mensage.data);
           setModelBrand(mensage.data);
         } catch (error) {
           console.log(error);
@@ -51,7 +48,6 @@ export const Home = () => {
         try {
           Api.defaults.headers.authorization = `Bearer ${token}`;
           const mensage = await Api.get(`years/${code}`);
-          console.log(mensage.data);
           setInfo(mensage.data);
         } catch (error) {
           console.log(error);
