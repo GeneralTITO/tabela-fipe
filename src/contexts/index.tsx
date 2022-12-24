@@ -1,7 +1,5 @@
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
-import React, { useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
-import { JsxElement } from "typescript";
 import { Datum, iInfo, iModels } from "../pages/types";
 
 type iContext = {
@@ -12,6 +10,8 @@ type iContext = {
   setModelBrand: React.Dispatch<React.SetStateAction<iModels[]>>;
   info: iInfo;
   setInfo: React.Dispatch<React.SetStateAction<iInfo>>;
+  brand: string;
+  setBrand: React.Dispatch<React.SetStateAction<string>>;
 };
 type iContextProps = {
   children: React.ReactNode;
@@ -23,6 +23,7 @@ export const ContextProvider = ({ children }: iContextProps) => {
   const [response, setResponse] = useState();
   const [modelBrand, setModelBrand] = useState([] as iModels[]);
   const [info, setInfo] = useState({} as iInfo);
+  const [brand, setBrand] = useState("");
 
   return (
     <Context.Provider
@@ -34,6 +35,8 @@ export const ContextProvider = ({ children }: iContextProps) => {
         setModelBrand,
         info,
         setInfo,
+        brand,
+        setBrand,
       }}
     >
       {children}
