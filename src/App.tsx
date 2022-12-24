@@ -1,5 +1,10 @@
+import { ContextProvider } from "./contexts";
 import { RoutesMain } from "./routes";
 
 export function App() {
-  return <RoutesMain />;
+  return (
+    <ContextProvider>
+      <RoutesMain />
+    </ContextProvider>
+  );
 }
