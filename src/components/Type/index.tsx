@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../contexts";
 import { Api } from "../../services/api";
 
@@ -29,6 +29,7 @@ export const Type = () => {
           value={type && type}
           label="Tipo de veículo"
           onChange={(e) => setType(e.target.value)}
+     
         >
           <MenuItem value="1">Carro</MenuItem>
           <MenuItem value="2">Moto</MenuItem>

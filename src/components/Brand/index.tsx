@@ -1,11 +1,10 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../contexts";
 import { Api } from "../../services/api";
 
 export const Brand = () => {
-  const { token, response, setModelBrand } = useContext(Context);
-  const [brand, setBrand] = useState("");
+  const { token, response, setModelBrand, brand, setBrand } = useContext(Context);
   useEffect(() => {
     const getSearch = async () => {
       if (brand) {
