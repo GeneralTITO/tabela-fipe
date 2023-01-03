@@ -13,7 +13,6 @@ export const Brand = () => {
           const mensage = await Api.get(`models/${brand}`);
           setModelBrand(mensage.data);
         } catch (error) {
-          console.log(error);
         } finally {
         }
       }

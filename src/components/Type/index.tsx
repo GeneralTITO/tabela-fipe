@@ -13,7 +13,6 @@ export const Type = () => {
         const mensage = await Api.get(`brands/${type}`);
         setResponse(mensage.data);
       } catch (error) {
-        console.log(error);
       } finally {
       }
     }
@@ -29,7 +28,6 @@ export const Type = () => {
           value={type && type}
           label="Tipo de veículo"
           onChange={(e) => setType(e.target.value)}
-     
         >
           <MenuItem value="1">Carro</MenuItem>
           <MenuItem value="2">Moto</MenuItem>

@@ -14,7 +14,6 @@ export const Model = () => {
           const mensage = await Api.get(`years/${code}`);
           setInfo(mensage.data);
         } catch (error) {
-          console.log(error);
         } finally {
         }
       }
