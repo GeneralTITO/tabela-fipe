@@ -32,8 +32,8 @@ export const DivCardStyled = styled.div`
   max-width: 200px;
   width: 100%;
   flex-direction: column;
-  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   gap: 30px;
   height: 150px;
