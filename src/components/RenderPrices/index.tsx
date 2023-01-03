@@ -1,30 +1,45 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Context } from "../../contexts";
+import { DivCardStyled, PAno, PPrice, SectionStyled } from "./styled";
 
 export const RenderPrices = () => {
   const { info } = useContext(Context);
   return (
     <>
       {info.brand && (
-        <div>
-          <div>
-            <p>{info.brand}</p>
-            <p>{info.model}</p>
-            <p>ultima atualização: {info.reference}</p>
-          </div>
-          <div>
+        <SectionStyled>
+          <header>
+            <div>
+              <p>{info.brand}</p>
+              <p>{info.model}</p>
+            </div>
+            <p>Ultima atualização: {info.reference}</p>
+          </header>
+          <section>
             {info.years &&
               info.years.map((e) => (
-                <div key={e.year_id}>
-                  <p>
-                    fabricação: {e.model_year} modelo:{e.year_id}
-                  </p>
+                <DivCardStyled key={e.year_id}>
+                  <div>
+                    <PAno>
+                      {" "}
+                      fabricação: <span>{e.model_year}</span>
+                    </PAno>
+                    <p>modelo:{e.year_id}</p>
+                  </div>
                   <p>combustível: {e.fuel}</p>
-                  <p>preço: {e.price}</p>
-                </div>
+                  <PPrice>
+                    preço:
+                    <span>
+                      {e.price.toLocaleString("pt-br", {
+                        style: "currency",
+                        currency: "BRL",
+                      })}
+                    </span>
+                  </PPrice>
+                </DivCardStyled>
               ))}
-          </div>
-        </div>
+          </section>
+        </SectionStyled>
       )}
     </>
   );

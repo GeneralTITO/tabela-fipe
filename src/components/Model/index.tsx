@@ -1,10 +1,10 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../../contexts";
 import { Api } from "../../services/api";
 
 export const Model = () => {
-  const { modelBrand, token, setInfo } = useContext(Context);
+  const { modelBrand, token, setInfo, brand } = useContext(Context);
   const [code, setCode] = useState("");
   useEffect(() => {
     const getSearch = async () => {
@@ -25,7 +25,7 @@ export const Model = () => {
     <>
       <FormControl fullWidth>
         <InputLabel id="modelo">Modelo</InputLabel>
-        <Select
+        <Select 
           labelId="modelo"
           id="modelo"
           value={code && code}
@@ -33,7 +33,7 @@ export const Model = () => {
           onChange={(e) => setCode(e.target.value)}
         >
           <MenuItem value={""}>Selecione um modelo</MenuItem>
-          {modelBrand &&
+          {brand &&
             modelBrand.map((e) => (
               <MenuItem value={e.fipe_code} key={e.fipe_code}>
                 {e.model}
