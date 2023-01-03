@@ -32,8 +32,9 @@ export const DivCardStyled = styled.div`
   max-width: 200px;
   width: 100%;
   flex-direction: column;
-  border: 2px solid black;
-  border-radius: 8px;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
   gap: 30px;
   height: 150px;
   justify-content: center;
@@ -45,18 +46,17 @@ export const DivCardStyled = styled.div`
     align-items: center;
   }
 `;
-export const PAno= styled.p`
-font-size: 1.25rem;
-font-weight: 500;
-span{
-  font-weight: 700;
-}
-
-`
-export const PPrice= styled.p`
-font-size: 1.25rem;
-font-weight: 500;
-span{
-  font-weight: 700;
-}
-`
+export const PAno = styled.p`
+  font-size: 1.25rem;
+  font-weight: 500;
+  span {
+    font-weight: 700;
+  }
+`;
+export const PPrice = styled.p`
+  font-size: 1.25rem;
+  font-weight: 500;
+  span {
+    font-weight: 700;
+  }
+`;
