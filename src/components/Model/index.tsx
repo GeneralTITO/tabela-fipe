@@ -13,6 +13,7 @@ export const Model = () => {
           Api.defaults.headers.authorization = `Bearer ${token}`;
           const mensage = await Api.get(`years/${code}`);
           setInfo(mensage.data);
+          console.log(mensage.data)
         } catch (error) {
         } finally {
         }
@@ -24,7 +25,7 @@ export const Model = () => {
     <>
       <FormControl fullWidth>
         <InputLabel id="modelo">Modelo</InputLabel>
-        <Select 
+        <Select
           labelId="modelo"
           id="modelo"
           value={code && code}

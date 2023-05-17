@@ -10,9 +10,11 @@ export const DivSelectStyled = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  border-radius: 12px;
   gap: 20px;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
 `;
+export const DivBanner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+`
